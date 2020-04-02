@@ -8,22 +8,23 @@ export class Register extends React.Component {
 
   render() {
     return (
-      <div className="base-container">
-        <div className="header"></div>
-        <div className="content"></div>
-        <div className="image">
-          <img src={loginImg} />
+      <div className="base-container" ref={this.props.containerRef}>
+        <div className="header">Register</div>
+        <div className="content">
+          <div className="image">
+            <img src={loginImg} />
+          </div>
           <div className="form">
             <div className="form-group">
-              <label htmlFor="Username">Username</label>
+              <label htmlFor="username">Username</label>
               <input type="text" name="username" placeholder="username" />
             </div>
             <div className="form-group">
-              <label htmlFor="Email">Email</label>
+              <label htmlFor="email">Email</label>
               <input type="text" name="email" placeholder="email" />
             </div>
             <div className="form-group">
-              <label htmlFor="Password">Password</label>
+              <label htmlFor="password">Password</label>
               <input type="text" name="password" placeholder="password" />
             </div>
           </div>
@@ -33,7 +34,7 @@ export class Register extends React.Component {
             Register
           </button>
           <button type="button" className="btn">
-            Guest login
+            Guest Login
           </button>
         </div>
       </div>
