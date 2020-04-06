@@ -1,7 +1,7 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.scss';
-import {Login, Register} from './component/login/index'
+import {Login, Register} from './component/login_component/index'
 
 class App extends React.Component{
 
