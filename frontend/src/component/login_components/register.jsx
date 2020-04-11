@@ -1,6 +1,6 @@
 import React from "react";
 import loginImg from "../../login.svg";
-
+import Button from "react-bootstrap/Button";
 const initialState = {
   email: "",
   password: "",
@@ -72,7 +72,7 @@ export class Register extends React.Component {
                      <input
                        type="text"
                        name="email"
-                       placeholder="email"
+                       placeholder="Email"
                        value={this.state.email}
                        onChange={this.handleChange}
                      />
@@ -83,7 +83,7 @@ export class Register extends React.Component {
                      <input
                        type="password"
                        name="password"
-                       placeholder="password"
+                       placeholder="Password"
                        value={this.state.password}
                        onChange={this.handleChange}
                      />
@@ -92,12 +92,10 @@ export class Register extends React.Component {
                  </div>
                </div>
                <div className="footer">
-                 <button type="submit" className="btn">
+                 <Button type="submit">
                    Register
-                 </button>
-                 <button type="button" className="btn">
-                   Guest Login
-                 </button>
+                 </Button>
+        
                </div>
              </form>
            );

@@ -1,8 +1,9 @@
 import React from "react";
 import loginImg from "../../logo2.PNG";
 import guest_page from "../guest_page/guest_page";
+import Button from 'react-bootstrap/Button';
+import trail from "./trail";
 import {
-  BrowserRouter as Router,
   Switch,
   Route,
   Link
@@ -67,66 +68,64 @@ export class Login extends React.Component {
              this.setState(initialState);
            }
          };
-         changePage = (event) => {
-           return <guest_page />;
+         changePage = () => {
+         this.props.history.push('/guest_page');
          };
          render() {
            return (
-             <Router>
-               <form
-                 className="base-container"
-                 ref={this.props.containerRef}
-                 onSubmit={this.handleSubmit}
-               >
-                 <div className="header">Red-Shift Estimator</div>
-                 <div className="content">
-                   <div className="image">
-                     <img src={loginImg} />
-                   </div>
-                   <div className="form">
-                     <div className="form-group">
-                       <label htmlFor="email">Email</label>
-                       <input
-                         type="text"
-                         name="email"
-                         placeholder="email"
-                         value={this.state.email}
-                         onChange={this.handleChange}
-                       />
-                     </div>
-                     <div className="error">{this.state.emailError}</div>
-                     <div className="form-group">
-                       <label htmlFor="password">Password</label>
-                       <input
-                         type="password"
-                         name="password"
-                         placeholder="password"
-                         value={this.state.password}
-                         onChange={this.handleChange}
-                       />
-                     </div>
-                     <div className="error">{this.state.passwordError}</div>
-                   </div>
+             <form
+               className="base-container"
+               ref={this.props.containerRef}
+               onSubmit={this.handleSubmit}
+             >
+               <div className="header">Red-Shift Estimator</div>
+               <div className="content">
+                 <div className="image">
+                   <img src={loginImg} />
                  </div>
-                 <div className="footer">
-                   <button type="submit" className="btn">
-                     Login
-                   </button>
-
-                   <button
-                     type="button"
+                 <div className="form">
+                   <div className="form-group">
+                     <label htmlFor="email">Email</label>
+                     <input
+                       type="text"
+                       name="email"
+                       placeholder="Email"
+                       value={this.state.email}
+                       onChange={this.handleChange}
+                     />
+                   </div>
+                   <div className="error">{this.state.emailError}</div>
+                   <div className="form-group">
+                     <label htmlFor="password">Password</label>
+                     <input
+                       type="password"
+                       name="password"
+                       placeholder="Password"
+                       value={this.state.password}
+                       onChange={this.handleChange}
+                     />
+                   </div>
+                   <div className="error">{this.state.passwordError}</div>
+                 </div>
+               </div>
+               <div className="footer">
+                 <Button type="submit">Login</Button>
+               </div>
+               <div className="guest_link">
+                 <p>
+                   {""}
+                   or{""}
+                   <Button
                      className="btn"
-                     onClick={this.changePage}
+                     variant="link"
+                     bsPrefix="btn1"
+                     /*  onClick={this.changePage} */
                    >
                      Guest Login
-                   </button>
-
-                   {/* <button type="button" className="btn">
-                Guest Login
-              </button> */}
-                 </div>
-               </form>
-             </Router>
+                   </Button>
+                 </p>
+               </div>
+             </form>
            );
          }
        }

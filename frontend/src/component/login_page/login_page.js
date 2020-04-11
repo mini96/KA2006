@@ -1,5 +1,4 @@
 import React from 'react';
-import logo from '../../logo.svg';
 import './login.scss';
 import { Login, Register } from '../login_components/index'
 

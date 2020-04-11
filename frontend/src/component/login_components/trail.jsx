@@ -1,8 +1,8 @@
 import React from 'react';
-import './guest_page.scss';
 
 
-class guest_page extends React.Component {
+
+class trail extends React.Component {
 
     render() {
 
@@ -15,4 +15,4 @@ class guest_page extends React.Component {
 
 }
 
-export default guest_page;
+export default trail;
