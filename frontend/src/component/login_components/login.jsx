@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState,setState} from "react";
 import loginImg from "../../logo2.PNG";
 import guest_page from "../guest_page/guest_page";
 import Button from 'react-bootstrap/Button';
@@ -6,7 +6,8 @@ import trail from "./trail";
 import {
   Switch,
   Route,
-  Link
+  Link,
+  Redirect
 } from "react-router-dom";
 
 const initialState = {
@@ -18,7 +19,8 @@ const initialState = {
   passwordError: ""
 };
 
-  
+
+
 
 export class Login extends React.Component {
          constructor(props) {
@@ -27,12 +29,14 @@ export class Login extends React.Component {
          state = initialState;
 
          handleChange = (event) => {
+        
            const isCheckbox = event.target.type === "checkbox";
            this.setState({
              [event.target.name]: isCheckbox
                ? event.target.checked
                : event.target.value,
            });
+              
          };
 
          validate = () => {
@@ -62,21 +66,26 @@ export class Login extends React.Component {
          handleSubmit = (event) => {
            event.preventDefault();
            const isValid = this.validate();
-          
-           if (isValid) {
+           
+           if (!isValid) {
+
              console.log(this.state);
              // clear form
-             this.setState(initialState);
-              event.target.reset();
+             this.state.password="";
+             this.state.email="";
+             
            }
          };
 
-          changePage = (event) => {
-    this.props.history.push("/guest_page");
-  };
+        
        
          render() {
+             
+
+
            return (
+
+            
              <form
                className="base-container"
                ref={this.props.containerRef}

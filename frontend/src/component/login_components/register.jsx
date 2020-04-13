@@ -51,10 +51,11 @@ export class Register extends React.Component {
          handleSubmit = (event) => {
            event.preventDefault();
            const isValid = this.validate();
-           if (isValid) {
+           if (!isValid) {
              console.log(this.state);
              // clear form
-             this.setState(initialState);
+             this.state.password = "";
+             this.state.email = "";
            }
          };
 

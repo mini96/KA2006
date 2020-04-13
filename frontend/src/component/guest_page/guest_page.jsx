@@ -5,11 +5,12 @@ import Button from "react-bootstrap/Button";
 class guest_page extends React.Component {
 
     render() {
-
+        console.log("IM IN VITCH");
         return (
           <div>
             <Button variant="link" >Link</Button>
-            <p>HELLO</p>
+            
+            <p className="signal">HELLO</p>
           </div>
         );
     }
