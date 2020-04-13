@@ -52,7 +52,7 @@
                 background-color: #f3f3f3;
                 border: 0;
                 border-radius: 4px;
-                margin-bottom: 25px;
+                margin-bottom: 10px;
                 transition: all 250ms ease-in-out;
                 &:focus{
                     outline: none;
@@ -65,12 +65,18 @@
        .footer {
         //margin-top: 3em;
         position: relative;
+        display: inline-block;
+        
+        
     }
 
      .error{
-         padding-top: -20px;
    font-size: 12;
   color: red; 
+  margin-bottom: 15px;
 }
-   
+   .bro{
+       margin-right: 15px;
+       margin-bottom: 5px;
+   }
 }

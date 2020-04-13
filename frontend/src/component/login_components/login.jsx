@@ -18,7 +18,7 @@ const initialState = {
   passwordError: ""
 };
 
-
+  
 
 export class Login extends React.Component {
          constructor(props) {
@@ -62,15 +62,19 @@ export class Login extends React.Component {
          handleSubmit = (event) => {
            event.preventDefault();
            const isValid = this.validate();
+          
            if (isValid) {
              console.log(this.state);
              // clear form
              this.setState(initialState);
+              event.target.reset();
            }
          };
-         changePage = () => {
-         this.props.history.push('/guest_page');
-         };
+
+          changePage = (event) => {
+    this.props.history.push("/guest_page");
+  };
+       
          render() {
            return (
              <form
@@ -109,22 +113,18 @@ export class Login extends React.Component {
                  </div>
                </div>
                <div className="footer">
-                 <Button type="submit">Login</Button>
+                 <Button className="bro" type="submit">Login {"   "}</Button>
+                     or 
+                  
+                 <br />
+                 <Button
+                   variant="link"
+                     onClick={this.changePage} 
+                 >
+                   Guest Login
+                 </Button>
                </div>
-               <div className="guest_link">
-                 <p>
-                   {""}
-                   or{""}
-                   <Button
-                     className="btn"
-                     variant="link"
-                     bsPrefix="btn1"
-                     /*  onClick={this.changePage} */
-                   >
-                     Guest Login
-                   </Button>
-                 </p>
-               </div>
+               <div className="guest_link"></div>
              </form>
            );
          }
