@@ -1,6 +1,7 @@
-import React, {useState,setState} from "react";
+import React, {useState,setState, Component} from "react";
 import loginImg from "../../logo2.PNG";
 import guest_page from "../guest_page/guest_page";
+
 import Button from 'react-bootstrap/Button';
 import trail from "./trail";
 import {
@@ -128,6 +129,7 @@ export class Login extends React.Component {
                  <br />
                  <Button
                    variant="link"
+                   bsPrefix="link_btn"
                      onClick={this.changePage} 
                  >
                    Guest Login

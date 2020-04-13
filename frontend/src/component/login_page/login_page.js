@@ -1,7 +1,7 @@
 import React from 'react';
 import './login.scss';
 import { Login, Register } from '../login_components/index'
-import {Redirect} from 'react-router-dom';
+import {Redirect, Route, Switch, Link} from 'react-router-dom';
 
 class login_page extends React.Component {
   constructor(props) {
@@ -30,10 +30,9 @@ class login_page extends React.Component {
     //Add .right by default
     this.rightSide.classList.add("right");
   }
-  changePage = (event) => {
-      event.target.reset();
+  changePage = () => {
+      console.log("wtf");
     this.setState({ redirect: true });
-    
   };
 
   render() {
@@ -44,8 +43,8 @@ class login_page extends React.Component {
     if (this.state.redirect) {
         
       return (
-      
-      <Redirect push to="/guest" />);
+      <Redirect push to="/guest" />
+      );
       
     }
     return (
@@ -53,10 +52,15 @@ class login_page extends React.Component {
         <div className="login">
           <div className="container" ref={(ref) => (this.container = ref)}>
             {isLogginActive && (
-              <Login containerRef={(ref) => (this.current = ref)} />
+              
+                <Login containerRef={(ref) => (this.current = ref)} />
+             
             )}
+
             {!isLogginActive && (
-              <Register containerRef={(ref) => (this.current = ref)} />
+           
+                <Register containerRef={(ref) => (this.current = ref)} />
+            
             )}
           </div>
           <RightSide

@@ -1,6 +1,4 @@
-body{
-    background-color: blue;
-}
+
 .login_app {
   text-align: center;
   display: flex;
@@ -85,13 +83,32 @@ body{
   font-size: 21px;
   padding: 2px 20px 0px -20px;
   border: 0;
-  background-color: #3498db;
+  //background-color: #3498db;
   color: #fff;
   border-radius: 3px;
   transition: all 250ms ease-in-out;
   cursor: pointer;
   &:hover {
     background-color: #2386c8;
+  }
+  &:focus {
+    outline: none;
+  }
+}
+
+.link_btn {
+  font-size: 15px;
+  padding: 2px 20px 0px -20px;
+  border: 4px;
+  //background-color: #3498db;
+  background-color: inherit;
+  color: blue($color: #000000);
+  text-decoration: underline;
+  border-radius: 3px;
+  transition: all 250ms ease-in-out;
+  cursor: pointer;
+  &:hover {
+ 
   }
   &:focus {
     outline: none;
