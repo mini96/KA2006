@@ -2,11 +2,15 @@ import React from 'react';
 import './guest_page.scss';
 import Button from "react-bootstrap/Button";
 import InputGroup from 'react-bootstrap/InputGroup'
+
 import FormControl from "react-bootstrap/FormControl";
+import Dropdown from "react-bootstrap/Dropdown";
+import DropdownButton from "react-bootstrap/DropdownButton";
+
 
 
 const initialState = {
-
+  id:"",
   optical1: "",
   optical2: "",
   optical3: "",
@@ -36,18 +40,30 @@ const initialState = {
 
 
 class guest_page extends React.Component {
-
+  
+  constructor(props) {
+    super(props);
+  }
+  state = initialState;
   handleSubmit = (event) => {
     event.preventDefault();
 
 
+  };
+  
+  handleChange = (event) => {
+    const isCheckbox = event.target.type === "checkbox";
+    this.setState({
+      [event.target.name]: isCheckbox
+        ? event.target.checked
+        : event.target.value,
+    });
   };
 
 
 
     render() {
 
-        console.log("IM IN FINALLY");
 
       
 
@@ -56,95 +72,117 @@ class guest_page extends React.Component {
            
             <div className="guest_container">
               <form onSubmit={this.handleSubmit}>
-              <InputGroup size="sm" className="mb-3">
-                <InputGroup.Prepend>
+
+
+                <InputGroup size="sm" className="mb-3" 
+                  onChange={this.handleChange}
+                // onChange={this.handleChange}  
+                >
+                <InputGroup.Prepend >
                   <InputGroup.Text id="inputGroup-sizing-sm">ID</InputGroup.Text>
                 </InputGroup.Prepend>
-                <FormControl aria-label="Small" aria-describedby="inputGroup-sizing-sm" />
+                  <FormControl 
+                    type="text"
+                    name="id"
+                    aria-label="Small"
+                   aria-describedby="inputGroup-sizing-sm"
+                     />
               </InputGroup>
               
-              <InputGroup size="sm" className="mb-3">
+                <InputGroup size="sm" className="mb-3"onChange={this.handleChange}>
+                  <InputGroup.Prepend >
+                    <InputGroup.Text id="inputGroup-sizing-sm" >Optical</InputGroup.Text>
+                </InputGroup.Prepend>
+                  <FormControl name= "optical1" aria-label="Small" aria-describedby="inputGroup-sizing-sm"  />
+                </InputGroup>
+            
+              
+                <InputGroup size="sm" className="mb-3" onChange={this.handleChange}>
                 <InputGroup.Prepend>
                   <InputGroup.Text id="inputGroup-sizing-sm">Optical</InputGroup.Text>
                 </InputGroup.Prepend>
-                <FormControl aria-label="Small" aria-describedby="inputGroup-sizing-sm" />
-              </InputGroup> 
-              
-               <InputGroup size="sm" className="mb-3">
-                <InputGroup.Prepend>
-                  <InputGroup.Text id="inputGroup-sizing-sm">Optical</InputGroup.Text>
-                </InputGroup.Prepend>
-                <FormControl aria-label="Small" aria-describedby="inputGroup-sizing-sm" />
+                  <FormControl name="optical2" aria-label="Small" aria-describedby="inputGroup-sizing-sm" />
               </InputGroup> 
 
-                <InputGroup size="sm" className="mb-3">
+                <InputGroup size="sm" className="mb-3"  onChange={this.handleChange}>
                   <InputGroup.Prepend>
                     <InputGroup.Text id="inputGroup-sizing-sm">Optical</InputGroup.Text>
                   </InputGroup.Prepend>
-                  <FormControl aria-label="Small" aria-describedby="inputGroup-sizing-sm" />
+                  <FormControl name="optical3" aria-label="Small" aria-describedby="inputGroup-sizing-sm" />
                 </InputGroup>
 
-                <InputGroup size="sm" className="mb-3">
+                <InputGroup size="sm" className="mb-3"  onChange={this.handleChange}>
                   <InputGroup.Prepend>
                     <InputGroup.Text id="inputGroup-sizing-sm">Optical</InputGroup.Text>
                   </InputGroup.Prepend>
-                  <FormControl aria-label="Small" aria-describedby="inputGroup-sizing-sm" />
+                  <FormControl name="optical4" aria-label="Small" aria-describedby="inputGroup-sizing-sm" />
                 </InputGroup>
 
-                <InputGroup size="sm" className="mb-3">
+                <InputGroup size="sm" className="mb-3"  onChange={this.handleChange}>
                   <InputGroup.Prepend>
                     <InputGroup.Text id="inputGroup-sizing-sm">Optical</InputGroup.Text>
                   </InputGroup.Prepend>
-                  <FormControl aria-label="Small" aria-describedby="inputGroup-sizing-sm" />
+                  <FormControl name="optical5" aria-label="Small" aria-describedby="inputGroup-sizing-sm" />
                 </InputGroup>
               
-              <InputGroup size="sm" className="mb-3">
+                <InputGroup size="sm" className="mb-3" onChange={this.handleChange}>
                 <InputGroup.Prepend>
                   <InputGroup.Text id="inputGroup-sizing-sm">Infared</InputGroup.Text>
                 </InputGroup.Prepend>
-                <FormControl aria-label="Small" aria-describedby="inputGroup-sizing-sm" />
+                  <FormControl name='infared1' aria-label="Small" aria-describedby="inputGroup-sizing-sm" />
               </InputGroup> 
               
-                <InputGroup size="sm" className="mb-3">
+                <InputGroup size="sm" className="mb-3"  onChange={this.handleChange}>
                   <InputGroup.Prepend>
                     <InputGroup.Text id="inputGroup-sizing-sm">Infared</InputGroup.Text>
                   </InputGroup.Prepend>
-                  <FormControl aria-label="Small" aria-describedby="inputGroup-sizing-sm" />
+                  <FormControl name='infared2' aria-label="Small" aria-describedby="inputGroup-sizing-sm" />
                 </InputGroup> 
 
-                <InputGroup size="sm" className="mb-3">
+                <InputGroup size="sm" className="mb-3"  onChange={this.handleChange}>
                   <InputGroup.Prepend>
                     <InputGroup.Text id="inputGroup-sizing-sm">Infared</InputGroup.Text>
                   </InputGroup.Prepend>
-                  <FormControl aria-label="Small" aria-describedby="inputGroup-sizing-sm" />
+                  <FormControl name='infared3' aria-label="Small" aria-describedby="inputGroup-sizing-sm" />
                 </InputGroup> 
 
-                <InputGroup size="sm" className="mb-3">
+                <InputGroup size="sm" className="mb-3"  onChange={this.handleChange}>
                   <InputGroup.Prepend>
                     <InputGroup.Text id="inputGroup-sizing-sm">Infared</InputGroup.Text>
                   </InputGroup.Prepend>
-                  <FormControl aria-label="Small" aria-describedby="inputGroup-sizing-sm" />
+                  <FormControl name='infared4' aria-label="Small" aria-describedby="inputGroup-sizing-sm" />
                 </InputGroup> 
 
-                <InputGroup size="sm" className="mb-3">
+                <InputGroup size="sm" className="mb-3"  onChange={this.handleChange}>
                   <InputGroup.Prepend>
                     <InputGroup.Text id="inputGroup-sizing-sm">Infared</InputGroup.Text>
                   </InputGroup.Prepend>
-                  <FormControl aria-label="Small" aria-describedby="inputGroup-sizing-sm" />
+                  <FormControl name='infared5' aria-label="Small" aria-describedby="inputGroup-sizing-sm" />
                 </InputGroup> 
 
-                <InputGroup size="sm" className="mb-3">
+                <InputGroup size="sm" className="mb-3"  onChange={this.handleChange}>
                   <InputGroup.Prepend>
                     <InputGroup.Text id="inputGroup-sizing-sm">Infared</InputGroup.Text>
                   </InputGroup.Prepend>
-                  <FormControl aria-label="Small" aria-describedby="inputGroup-sizing-sm" />
+                  <FormControl name='infared6' aria-label="Small" aria-describedby="inputGroup-sizing-sm" />
                 </InputGroup> 
 
-                <InputGroup size="sm" className="mb-3">
+                <InputGroup size="sm" className="mb-3"  onChange={this.handleChange}>
                   <InputGroup.Prepend>
                     <InputGroup.Text id="inputGroup-sizing-sm">Radio</InputGroup.Text>
                   </InputGroup.Prepend>
-                  <FormControl aria-label="Small" aria-describedby="inputGroup-sizing-sm" />
+                  <FormControl name='radio' aria-label="Small" aria-describedby="inputGroup-sizing-sm" />
+
+                  {/* <DropdownButton
+                    as={InputGroup.Prepend}
+                    variant="outline-secondary"
+                    title="GHz"
+                    id="input-group-dropdown-1"
+                  >
+                    <Dropdown.Item href="#">GHz</Dropdown.Item>
+                    <Dropdown.Item href="#">MHz</Dropdown.Item>
+                    <Dropdown.Item href="#">Hz</Dropdown.Item>
+                  </DropdownButton> */}
                 </InputGroup> 
 
                 <Button type="submit">Submit</Button>

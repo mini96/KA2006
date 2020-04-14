@@ -25,6 +25,7 @@ export class Login extends React.Component {
          state = initialState;
 
          handleChange = (event) => {
+           console.log(this.state);
            const isCheckbox = event.target.type === "checkbox";
            this.setState({
              [event.target.name]: isCheckbox

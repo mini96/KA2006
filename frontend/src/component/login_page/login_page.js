@@ -3,10 +3,7 @@ import './login.scss';
 import { Login, Register } from '../login_components/index'
 import {Redirect, Route, Switch, Link} from 'react-router-dom';
 
-function changePage (event){
-      console.log("wtf");
-    this.setState({ redirect: true });
-  };
+
 
 class login_page extends React.Component {
   constructor(props) {
@@ -42,13 +39,6 @@ class login_page extends React.Component {
     const current = isLogginActive ? "Register" : "Login";
     const currentActive = isLogginActive ? "login" : "register";
 
-    if (this.state.redirect) {
-        
-      return (
-      <Redirect push to="/guest" />
-      );
-      
-    }
     return (
       <div className="App">
         <div className="login">

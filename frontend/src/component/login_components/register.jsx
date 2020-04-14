@@ -64,7 +64,7 @@ export class Register extends React.Component {
              <form className="base-container" ref={this.props.containerRef} onSubmit={this.handleSubmit} >
                <div className="header">Register for Red-Shift Estimator</div>
                <div className="content">
-                 <div className="image">
+                 <div className="image1">
                    <img src={loginImg} />
                  </div>
                  <div className="form">
