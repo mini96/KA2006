@@ -121,7 +121,7 @@ export class Login extends React.Component {
                  </div>
                </div>
                <div className="footer">
-                 <Button className="bro" type="submit">
+                 <Button className="log_btn" type="submit">
                    Login {"   "}
                  </Button>
                  or

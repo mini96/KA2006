@@ -1,26 +1,108 @@
 import React from 'react';
 import './guest_page.scss';
 import Button from "react-bootstrap/Button";
-import Navbar from "react-bootstrap/Navbar";
-import Nav from "react-bootstrap/Nav";
-import NavDropdown from "react-bootstrap/NavDropdown";
-import Container from "react-bootstrap/Container";
-import Form from "react-bootstrap/Form";
+import InputGroup from 'react-bootstrap/InputGroup'
+import FormControl from "react-bootstrap/FormControl";
 class guest_page extends React.Component {
 
+  handleSubmit = (event) => {
+    event.preventDefault();
+
+  };
 
 
     render() {
         console.log("IM IN VITCH");
-        
+
+      
+
         return (
           <div className="guest">
-            <div className="guest_header">
+           
+            <div className="guest_container">
+              <form onSubmit={this.handleSubmit}>
+              <InputGroup size="sm" className="mb-3">
+                <InputGroup.Prepend>
+                  <InputGroup.Text id="inputGroup-sizing-sm">ID</InputGroup.Text>
+                </InputGroup.Prepend>
+                <FormControl aria-label="Small" aria-describedby="inputGroup-sizing-sm" />
+              </InputGroup>
               
-            </div>
-            <div className="content"></div>
+              <InputGroup size="sm" className="mb-3">
+                <InputGroup.Prepend>
+                  <InputGroup.Text id="inputGroup-sizing-sm">Optical u</InputGroup.Text>
+                </InputGroup.Prepend>
+                <FormControl aria-label="Small" aria-describedby="inputGroup-sizing-sm" />
+              </InputGroup> 
+              
+               <InputGroup size="sm" className="mb-3">
+                <InputGroup.Prepend>
+                  <InputGroup.Text id="inputGroup-sizing-sm">Small</InputGroup.Text>
+                </InputGroup.Prepend>
+                <FormControl aria-label="Small" aria-describedby="inputGroup-sizing-sm" />
+              </InputGroup> 
+              
+              <InputGroup size="sm" className="mb-3">
+                <InputGroup.Prepend>
+                  <InputGroup.Text id="inputGroup-sizing-sm">Small</InputGroup.Text>
+                </InputGroup.Prepend>
+                <FormControl aria-label="Small" aria-describedby="inputGroup-sizing-sm" />
+              </InputGroup> 
+              
+               <InputGroup size="sm" className="mb-3">
+                <InputGroup.Prepend>
+                  <InputGroup.Text id="inputGroup-sizing-sm">Small</InputGroup.Text>
+                </InputGroup.Prepend>
+                <FormControl aria-label="Small" aria-describedby="inputGroup-sizing-sm" />
+              </InputGroup>
 
-            <Button>Allo</Button>
+              <InputGroup size="sm" className="mb-3">
+                <InputGroup.Prepend>
+                  <InputGroup.Text id="inputGroup-sizing-sm">Small</InputGroup.Text>
+                </InputGroup.Prepend>
+                <FormControl aria-label="Small" aria-describedby="inputGroup-sizing-sm" />
+              </InputGroup>
+
+              <InputGroup size="sm" className="mb-3">
+                <InputGroup.Prepend>
+                  <InputGroup.Text id="inputGroup-sizing-sm">Small</InputGroup.Text>
+                </InputGroup.Prepend>
+                <FormControl aria-label="Small" aria-describedby="inputGroup-sizing-sm" />
+              </InputGroup>
+
+              <InputGroup size="sm" className="mb-3">
+                <InputGroup.Prepend>
+                  <InputGroup.Text id="inputGroup-sizing-sm">Small</InputGroup.Text>
+                </InputGroup.Prepend>
+                <FormControl aria-label="Small" aria-describedby="inputGroup-sizing-sm" />
+              </InputGroup>
+
+
+
+              <InputGroup size="sm" className="mb-3">
+                <InputGroup.Prepend>
+                  <InputGroup.Text id="inputGroup-sizing-sm">Small</InputGroup.Text>
+                </InputGroup.Prepend>
+                <FormControl aria-label="Small" aria-describedby="inputGroup-sizing-sm" />
+              </InputGroup>
+
+
+              <InputGroup size="sm" className="mb-3">
+                <InputGroup.Prepend>
+                  <InputGroup.Text id="inputGroup-sizing-sm">Small</InputGroup.Text>
+                </InputGroup.Prepend>
+                <FormControl aria-label="Small" aria-describedby="inputGroup-sizing-sm" />
+              </InputGroup><InputGroup size="sm" className="mb-3">
+                <InputGroup.Prepend>
+                  <InputGroup.Text id="inputGroup-sizing-sm">Small</InputGroup.Text>
+                </InputGroup.Prepend>
+                <FormControl aria-label="Small" aria-describedby="inputGroup-sizing-sm" />
+              </InputGroup>
+
+              </form>
+
+            </div>
+
 
             <div className="footer"></div>
           </div>
