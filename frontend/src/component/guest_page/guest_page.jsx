@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import './guest_page.scss';
 import Button from "react-bootstrap/Button";
 import InputGroup from 'react-bootstrap/InputGroup'
