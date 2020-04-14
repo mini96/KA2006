@@ -4,12 +4,7 @@ import login_page from "../login_page/login_page";
 
 import Button from 'react-bootstrap/Button';
 import trail from "./trail";
-import {
-  Switch,
-  Route,
-  Link,
-  Redirect
-} from "react-router-dom";
+import {Redirect} from "react-router-dom";
 
 const initialState = {
   
@@ -75,7 +70,7 @@ export class Login extends React.Component {
          };
 
          changePage = (event) => {
-           console.log("wtf");
+           
            this.setState({ redirect: true });
          }
 
