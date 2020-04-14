@@ -3,6 +3,11 @@ import './login.scss';
 import { Login, Register } from '../login_components/index'
 import {Redirect, Route, Switch, Link} from 'react-router-dom';
 
+function changePage (event){
+      console.log("wtf");
+    this.setState({ redirect: true });
+  };
+
 class login_page extends React.Component {
   constructor(props) {
     super(props);
@@ -30,10 +35,7 @@ class login_page extends React.Component {
     //Add .right by default
     this.rightSide.classList.add("right");
   }
-  changePage = () => {
-      console.log("wtf");
-    this.setState({ redirect: true });
-  };
+  
 
   render() {
     const { isLogginActive } = this.state;

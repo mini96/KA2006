@@ -1,6 +1,6 @@
 import React, {useState,setState, Component} from "react";
 import loginImg from "../../logo2.PNG";
-import guest_page from "../guest_page/guest_page";
+import login_page from "../login_page/login_page";
 
 import Button from 'react-bootstrap/Button';
 import trail from "./trail";
@@ -30,14 +30,12 @@ export class Login extends React.Component {
          state = initialState;
 
          handleChange = (event) => {
-        
            const isCheckbox = event.target.type === "checkbox";
            this.setState({
              [event.target.name]: isCheckbox
                ? event.target.checked
                : event.target.value,
            });
-              
          };
 
          validate = () => {
@@ -67,26 +65,26 @@ export class Login extends React.Component {
          handleSubmit = (event) => {
            event.preventDefault();
            const isValid = this.validate();
-           
-           if (!isValid) {
 
+           if (!isValid) {
              console.log(this.state);
              // clear form
-             this.state.password="";
-             this.state.email="";
-             
+             this.state.password = "";
+             this.state.email = "";
            }
          };
 
-        
-       
-         render() {
-             
+         changePage = (event) => {
+           console.log("wtf");
+           this.setState({ redirect: true });
+         }
 
+         render() {
+           if (this.state.redirect) {
+             return <Redirect push to="/guest" />;
+           }
 
            return (
-
-            
              <form
                className="base-container"
                ref={this.props.containerRef}
@@ -123,14 +121,15 @@ export class Login extends React.Component {
                  </div>
                </div>
                <div className="footer">
-                 <Button className="bro" type="submit">Login {"   "}</Button>
-                     or 
-                  
+                 <Button className="bro" type="submit">
+                   Login {"   "}
+                 </Button>
+                 or
                  <br />
                  <Button
                    variant="link"
                    bsPrefix="link_btn"
-                     onClick={this.changePage} 
+                   onClick={this.changePage}
                  >
                    Guest Login
                  </Button>
