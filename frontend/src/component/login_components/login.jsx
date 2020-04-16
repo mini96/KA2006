@@ -1,10 +1,10 @@
-import React, {useState,setState, Component} from "react";
+import React from "react";
 import loginImg from "../../logo2.PNG";
-import login_page from "../login_page/login_page";
 
-import Button from 'react-bootstrap/Button';
-import trail from "./trail";
 import {Redirect} from "react-router-dom";
+import Button from 'react-bootstrap/Button';
+// import trail from "./trail";
+// import login_page from "../login_page/login_page";
 
 const initialState = {
   

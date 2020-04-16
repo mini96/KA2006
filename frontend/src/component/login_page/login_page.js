@@ -1,7 +1,7 @@
 import React from 'react';
 import './login.scss';
 import { Login, Register } from '../login_components/index'
-import {Redirect, Route, Switch, Link} from 'react-router-dom';
+// import {Redirect, Route, Switch, Link} from 'react-router-dom';
 
 
 
