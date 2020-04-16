@@ -68,7 +68,24 @@ class guest_page extends React.Component {
       
 
         return (
-          <div className="guest">
+          
+            <div className="about_pg">
+              <div className="header">
+                <header>Redshift Estimator</header>
+              </div>
+              <div className="content">
+                <p>
+                  This web-interface allows you to input parameters you have found{" "}
+                  <br />
+            from your observatory and gives you an estimate of the distance{" "}
+                  <br />
+            between the galaxies you want to get.
+          </p>
+              </div>
+              <Button variant="dark" onClick={this.changePage}>
+                Proceed
+        </Button>
+          
            
             <div className="guest_container">
               <form onSubmit={this.handleSubmit}>
@@ -194,6 +211,7 @@ class guest_page extends React.Component {
 
             <div className="footer"></div>
           </div>
+          
         );
     }
 
