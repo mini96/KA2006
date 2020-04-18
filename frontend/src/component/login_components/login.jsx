@@ -1,10 +1,10 @@
-import React, {useState,setState, Component} from "react";
+import React from "react";
 import loginImg from "../../logo2.PNG";
-import login_page from "../login_page/login_page";
-import About_page from "../filler_pages/about_page"
-import Button from 'react-bootstrap/Button';
-import trail from "./trail";
+
 import {Redirect} from "react-router-dom";
+import Button from 'react-bootstrap/Button';
+// import trail from "./trail";
+// import login_page from "../login_page/login_page";
 
 const initialState = {
   
@@ -77,7 +77,7 @@ export class Login extends React.Component {
 
          render() {
            if (this.state.redirect) {
-             return <Redirect push to="/about" />;
+             return <Redirect push to="/guest" />;
            }
 
            return (
@@ -94,6 +94,7 @@ export class Login extends React.Component {
                  <div className="form">
                    <div className="form-group">
                      <label htmlFor="email">Email</label>
+                   
                      <input
                        type="text"
                        name="email"

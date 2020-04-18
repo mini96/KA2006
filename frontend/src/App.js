@@ -1,11 +1,11 @@
 import React from 'react';
 import './App.scss';
-import About_page from './component/filler_pages/about_page'
+
 import { Login, Register } from './component/login_components/index'
 import {Route, Switch} from 'react-router-dom'
 import Login_page from './component/login_page/login_page'
 import Guest_page from './component/guest_page/guest_page'
-import Navbar from "react-bootstrap/Navbar";
+
 class App extends React.Component{
 
 
@@ -20,7 +20,6 @@ class App extends React.Component{
           <Route path="/login" component={Login} />
           <Route path="/register" component={Register} />
           <Route path="/guest" component={Guest_page} />
-          <Route path="/about" component={About_page} />
           <Route exact path="/" component={Login_page} />
         </Switch>
       </div>
