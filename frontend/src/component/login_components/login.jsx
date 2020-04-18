@@ -94,6 +94,7 @@ export class Login extends React.Component {
                  <div className="form">
                    <div className="form-group">
                      <label htmlFor="email">Email</label>
+                   
                      <input
                        type="text"
                        name="email"
