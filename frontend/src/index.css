@@ -6,13 +6,38 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-   background-image: url("background_img.jpg");
+   background-image: url("./component/bg_imgs/bg1.jpg");
     background-size: cover;
     background-repeat: no-repeat;
  background-position: center;
+ transition: 6s;
+animation-name: animate;
+animation-direction: normal;
+animation-duration: 40s;
+animation-fill-mode: forwards;
+animation-iteration-count: infinite;
 
+animation-timing-function: ease-in-out;
 }
 
+@keyframes animate{
+  0%{
+    background-image: url("./component/bg_imgs/bg3.jpg");
+  }
+  20%{
+    background-image: url("./component/bg_imgs/bg4.jpg");
+  }
+  40%{
+    background-image: url("./component/bg_imgs/bg5.jpg");
+  }
+  60%{
+    background-image: url("./component/bg_imgs/bg6.jpg");
+  }
+  80%{
+    background-image: url("./component/bg_imgs/bg7.jpg");
+  }
+
+}
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;

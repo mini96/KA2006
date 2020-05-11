@@ -74,6 +74,39 @@ export class Login extends React.Component {
            
            this.setState({ redirect: true });
          }
+  UserLogin = () => {
+    fetch('', {
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+
+        email: this.email,
+
+        password: this.password
+
+      })
+
+    }).then((response) => response.json())
+      .then((responseJson) => {
+
+        // If server response message same as Data Matched
+        if (responseJson === 'Data Matched') {
+          //if data matches navigate to the next page
+          console.log("IT WORKED");
+        }
+        else {
+
+          alert.alert(responseJson);
+        }
+
+      }).catch((error) => {
+        console.error(error);
+      });
+
+  }
 
          render() {
            if (this.state.redirect) {

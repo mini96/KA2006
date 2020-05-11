@@ -105,7 +105,7 @@ export class Login extends React.Component {
         console.error(error);
       });
  
-  }
+  
 }
          render() {
            if (this.state.redirect) {
