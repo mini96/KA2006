@@ -226,12 +226,14 @@ if (optical_e || infrared_e || radio_e) {
 
                             </div>
                             </div>
-                            <div className="error">{this.state.radio_e}</div>
+                            
 
 
                         <div className="input-group">
                             <div className="input-group-prepend">
-                                <span className="input-group-text" id="">Optical</span>
+                                <span className="input-group-text" id="optical_inp">Optical&nbsp;
+
+</span>
                             </div>
                             <input type="text" class="form-control" placeholder="u" name="optical1" onChange={this.handleChange} />
                             <input type="text" class="form-control" placeholder="g" name="optical2" onChange={this.handleChange}/>
