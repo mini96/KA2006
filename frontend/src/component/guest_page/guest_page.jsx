@@ -57,13 +57,11 @@ class guest_page extends React.Component {
               Or if you are just looking to calculate for a single object then 
               press the button below
             </p>
-              <button type="button" class="btn btn-light" onClick={() =>{
-              this.setState({ visable : !this.state.visable });
-            }} >Proceed</button>
+            
 </div>
-            {this.state.visable ? <div className="guest_container"> <Input_fields /> </div> : null}
+            
          
-         
+            <div className="guest_container"> <Input_fields /> </div>
          
            {/* 
            <Input_fields />
