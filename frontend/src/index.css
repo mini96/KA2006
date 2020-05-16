@@ -10,14 +10,14 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
  background-position: center;
- transition: 6s;
+ /* transition: 6s;
 animation-name: animate;
 animation-direction: normal;
 animation-duration: 40s;
 animation-fill-mode: forwards;
 animation-iteration-count: infinite;
 
-animation-timing-function: ease-in-out;
+animation-timing-function: ease-in-out; */
 }
 
 @keyframes animate{

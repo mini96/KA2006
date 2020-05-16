@@ -1,6 +1,6 @@
 import React from "react";
 import loginImg from "../../logo2.PNG";
-
+import axios from "axios";
 import {Redirect} from "react-router-dom";
 import Button from 'react-bootstrap/Button';
 // import trail from "./trail";
@@ -12,7 +12,10 @@ const initialState = {
   password: "",
   
   emailError: "",
-  passwordError: ""
+  passwordError: "",
+
+  login_dets: [],
+  url: "http://localhost/KA2006/KA2006/Server/public/api/registration"
 };
 
 
@@ -23,6 +26,11 @@ export class Login extends React.Component {
            super(props);
          }
          state = initialState;
+
+         getLogin_dets = async () => {
+           const login_dets = await axios.get(this.state.url);
+           this.setState({login_dets : login_dets.data}); 
+         }
 
          handleChange = (event) => {
            console.log(this.state);
@@ -63,6 +71,7 @@ export class Login extends React.Component {
            const isValid = this.validate();
 
            if (!isValid) {
+             this.getLogin_dets();
              console.log(this.state);
              // clear form
              this.state.password = "";
@@ -74,39 +83,7 @@ export class Login extends React.Component {
            
            this.setState({ redirect: true });
          }
-  UserLogin = () => {
-    fetch('', {
-      method: 'POST',
-      headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
 
-        email: this.email,
-
-        password: this.password
-
-      })
-
-    }).then((response) => response.json())
-      .then((responseJson) => {
-
-        // If server response message same as Data Matched
-        if (responseJson === 'Data Matched') {
-          //if data matches navigate to the next page
-          console.log("IT WORKED");
-        }
-        else {
-
-          alert.alert(responseJson);
-        }
-
-      }).catch((error) => {
-        console.error(error);
-      });
-
-  }
 
          render() {
            if (this.state.redirect) {
